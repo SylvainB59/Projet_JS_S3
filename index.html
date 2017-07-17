@@ -25,22 +25,24 @@
         <!-- START OF HEADER -->
 
         <header>
-
+            <h1>PROJET S3 (JS)</h1>
         </header>
 
         <!-- END OF HEADER -->
 
         <!-- START OF ASIDE -->
 
-        <aside>
-
+        <aside class="navigation">
+            <p onclick="mainSlider()" id="one">SLIDER</p>
+            <p onclick="mainJdp()" id="two">JEUX DES PAIRES</p>
+            <p onclick="mainCalc()" id="three">CALCULATRICE</p>
         </aside>
 
         <!-- END OF ASIDE -->
 
         <!-- START OF SECTION -->
 
-        <section class="container-fluid mainSlider">
+<!--         <section class="container-fluid mainSlider">
 
             <div class="row">
 
@@ -48,24 +50,28 @@
 
                     <div class="row">
 
-                        <!-- <section class="col-1 left">
-
-                        </section> -->
-
                         <section class="col-12 view">
                             <ul>
-                                <li><img src="" alt=""></li>
-                                <li><img src="" alt=""></li>
-                                <li><img src="" alt=""></li>
-                                <li><img src="" alt=""></li>
-                                <li><img src="" alt=""></li>
+                                <li><figure><img src="img/Cascade.jpg"
+                                srcset="img/Cascade_sm.jpg 360w, img/Cascade_md.jpg 768w, img/Cascade.jpg 1280w"
+                                alt="Cascade"></figure></li>
+                                <li><figure><img src="img/Cascade.jpg"
+                                srcset="img/Cascade_sm.jpg 360w, img/Cascade_md.jpg 768w, img/Cascade.jpg 1280w"
+                                alt="Cascade"></figure></li>
+                                <li><figure><img src="img/Lune.jpg"
+                                srcset="img/Lune_sm.jpg 360w, img/Lune_md.jpg 768w, img/Lune.jpg 1280w"
+                                alt="Lune"></figure></li>
+                                <li><figure><img src="img/Milkyway.jpg"
+                                srcset="img/Milkyway_sm.jpg 360w, img/Milkyway_md.jpg 768w, img/Milkyway.jpg 1280w"
+                                alt="Milkyway"></figure></li>
+                                <li><figure><img src="img/Palmier.jpg"
+                                srcset="img/Palmier_sm.jpg 360w, img/Palmier_md.jpg 768w, img/Palmier.jpg 1280w"
+                                alt="Palmier"></figure></li>
+                                <li><figure><img src="img/Tigre.jpg"
+                                srcset="img/Tigre_sm.jpg 360w, img/Tigre_md.jpg 768w, img/Tigre.jpg 1280w" alt="Tigre"></figure></li>
                             </ul>
 
                         </section>
-
-                       <!--  <section class="col-1 right">
-
-                        </section> -->
 
                         <section class="col-12 play">
 
@@ -77,6 +83,66 @@
 
             </div>
 
+        </section> -->
+
+        <section id="mainSlider" class="hidden">
+            <h2>SLIDER</h2>
+            <article class="slider">
+                <!-- <figure id="left"><img id="imgLeft" src="" alt=""></figure> -->
+                <figure id="center"><img id="imgCenter" src="" alt="images du slider"></figure>
+                <!-- <figure id="right"><img id="imgRight" src="" alt=""></figure> -->
+                <div class="bouton">
+                    <p onclick="prev()">Prev</p>
+                    <p onclick="stop()" id="stop" class="hidden">STOP</p>
+                    <p onclick="mySlider()" id="start" class="">START</p>
+                    <p onclick="next()">Next</p>
+                </div>
+            <!--<div class="delai">
+                    <p onclick="moin()">--</p>
+                    <p>DELAI</p>
+                    <p onclick="plus()">++</p>
+                </div> -->
+            </article>
+        </section>
+
+        <section id="mainJdp" class="hidden">
+            <h2>Jeu des paires</h2>
+            <article class="slider">
+                <!-- <figure id="left"><img id="imgLeft" src="" alt=""></figure> -->
+                <figure id="center"><img id="imgCenter" src="" alt="images du slider"></figure>
+                <!-- <figure id="right"><img id="imgRight" src="" alt=""></figure> -->
+                <div class="bouton">
+                    <p onclick="prev()">retour</p>
+                    <p onclick="stop()" id="stop" class="hidden">STOP</p>
+                    <p onclick="mySlider()" id="start" class="">START</p>
+                    <p onclick="next()">avancer</p>
+                </div>
+            <!--<div class="delai">
+                    <p onclick="moin()">--</p>
+                    <p>DELAI</p>
+                    <p onclick="plus()">++</p>
+                </div> -->
+            </article>
+        </section>
+
+        <section id="mainCalc" class="hidden">
+            <h2>Calculatrice</h2>
+            <article class="slider">
+                <!-- <figure id="left"><img id="imgLeft" src="" alt=""></figure> -->
+                <figure id="center"><img id="imgCenter" src="" alt="images du slider"></figure>
+                <!-- <figure id="right"><img id="imgRight" src="" alt=""></figure> -->
+                <div class="bouton">
+                    <p onclick="prev()">retour</p>
+                    <p onclick="stop()" id="stop" class="hidden">STOP</p>
+                    <p onclick="mySlider()" id="start" class="">START</p>
+                    <p onclick="next()">avancer</p>
+                </div>
+            <!--<div class="delai">
+                    <p onclick="moin()">--</p>
+                    <p>DELAI</p>
+                    <p onclick="plus()">++</p>
+                </div> -->
+            </article>
         </section>
 
         <!-- END OF SECTION -->

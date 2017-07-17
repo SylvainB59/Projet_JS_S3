@@ -97,38 +97,98 @@ textarea {
 
 /*start of common rules*/
 
-.mainSlider {
-    height: 350px;
+.hidden {
+    display: none;
+}
+
+.active {
     background-color: black;
-}
-
-.slider {
-    background-color: grey;
-    height: 300px;
-}
-
-.view {
-    background-color: red;
-    height: 300px;
-}
-
-.left, .right {
-    background-color: darkgrey;
-    height: 300px;
-}
-
-.play {
-    background-color: green;
-    height: 50px;
+    color: white;
 }
 
 /*Enc of common rules*/
 
 /*START OF HEADER*/
 
+h1, h2 {
+    text-align: center;
+}
+
 /*END OF HEADER*/
 
+/*START OF ASIDE*/
+
+.navigation {
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    background-color: grey;
+}
+
+.navigation p {
+    padding: 10px;
+    margin: 0;
+}
+
+/*END OF ASIDE*/
+
 /*START OF SECTION*/
+
+.slider {
+    width: 100vw;
+    /*height: 230px;*/
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /*overflow: hidden;*/
+    background-color: black;
+    position: relative;
+}
+
+.slider figure {
+    margin: 0;
+    height: 100%;
+}
+
+.slider img {
+    width: 100%;
+    border: 5px solid black;
+}
+
+/*#center {
+    width: 100%;
+
+}*/
+
+/*#left {
+    width: 0%;
+}
+
+#right {
+    width: 0%;
+}*/
+
+.bouton {
+    display: flex;
+    justify-content: space-around;
+    background-color: black;
+    border: 5px solid black;
+}
+
+/*.delai {
+    display: flex;
+    justify-content: center;
+    background-color: black;
+}*/
+
+.bouton p, .delai p {
+    padding: 10px;
+    margin: 0;
+    border: 5px solid grey;
+    color: black;
+    background-color: white;
+}
 
 /*END OF SECTION*/
 
@@ -148,6 +208,9 @@ textarea {
     /*END OF HEADER*/
 
     /*START OF SECTION*/
+    .slider {
+        /*height: 450px;*/
+    }
 
     /*END OF SECTION*/
 
@@ -167,6 +230,11 @@ textarea {
     /*END OF HEADER*/
 
     /*START OF SECTION*/
+
+    .slider {
+        width: 80vw;
+        /*height: 600px;*/
+    }
 
     /*END OF SECTION*/
 
