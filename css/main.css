@@ -134,14 +134,14 @@ h1, h2 {
 
 /*START OF SECTION*/
 
+
+/*~~~~~~~~~~ SLIDER ~~~~~~~~~~*/
 .slider {
     width: 100vw;
-    /*height: 230px;*/
     margin: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /*overflow: hidden;*/
     background-color: black;
     position: relative;
 }
@@ -156,19 +156,6 @@ h1, h2 {
     border: 5px solid black;
 }
 
-/*#center {
-    width: 100%;
-
-}*/
-
-/*#left {
-    width: 0%;
-}
-
-#right {
-    width: 0%;
-}*/
-
 .bouton {
     display: flex;
     justify-content: space-around;
@@ -176,19 +163,112 @@ h1, h2 {
     border: 5px solid black;
 }
 
-/*.delai {
-    display: flex;
-    justify-content: center;
-    background-color: black;
-}*/
-
-.bouton p, .delai p {
+.bouton p {
     padding: 10px;
     margin: 0;
     border: 5px solid grey;
     color: black;
     background-color: white;
 }
+
+
+/*~~~~~~~~~~ JEU DES PAIRES ~~~~~~~~~~*/
+
+#startJDP, .jdp {
+    display: flex;
+    height: 95vh;
+    border: 2px solid black;
+}
+
+#startJDP {
+    justify-content: center;
+    align-items: center;
+    background-color: lightgrey;
+}
+
+#startJDP p {
+    padding: 20px;
+    border-radius: 10%;
+    border: 2px solid black;
+    background-color: white;
+}
+
+.jdp {
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.carte {
+    width: 13%;
+    height: 35%;
+    margin: auto;
+    background-color: black;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.choix {
+    /*transition: .2s;*/
+    transition : opacity 1s, width .5s, height .5s;
+    width: 0%;
+    height: 0%;
+    opacity: 0;
+}
+
+.carte:hover .choix {
+    /*width: 100%;*/
+    /*height: 100%;*/
+    /*opacity: 1;*/
+}
+
+.score {
+    position: absolute;
+    display: flex;
+    height: 95vh;
+    width: 100%;
+    z-index: -1;
+    justify-content: center;
+    align-items: center;
+}
+
+#score {
+    background-color: lightgrey;
+}
+
+.rouge {
+    background-color: red;
+}
+
+.vert {
+    background-color: green;
+}
+
+.bleu {
+    background-color: blue;
+}
+
+.jaune {
+    background-color: yellow;
+}
+
+.orange {
+    background-color: orange;
+}
+
+.violet {
+    background-color: violet;
+}
+
+.marron {
+    background-color: brown;
+}
+
+
+/*~~~~~~~~~~ CALCULATRICE ~~~~~~~~~~*/
+
 
 /*END OF SECTION*/
 

@@ -168,7 +168,7 @@ function mySlider(){
 }
 
 function start(){
-  Start = setInterval(slider, 2000)
+  Start = setInterval("slider()", 2000)
 }
 
 function stop(){
@@ -215,3 +215,74 @@ function prev(){
 /////////////////////// JEU DES PAIRES ///////////////////////
 //////////////////////////////////////////////////////////////
 
+var colors = ["rouge", "rouge", "vert", "vert", "bleu", "bleu", "jaune", "jaune", "marron", "marron", "orange", "orange", "violet", "violet"];
+var carte = document.getElementsByClassName("carte");
+var choix = document.getElementsByClassName("choix");
+// var choice = [];
+var playerChoice = [];
+var z = 0;
+// random();
+
+function startJdp(){
+  random();
+  document.getElementById("startJDP").classList.add("hidden");
+  document.getElementById("jdp").classList.remove("hidden");
+}
+
+function random(){
+  for(i=0; i<14; i++){
+    var randomColor = Math.floor(Math.random()*colors.length);
+    choix[i].classList.add(colors.splice(randomColor, 1));
+  }
+}
+
+function showChoice(){
+  // var myOpen = setInterval("showChoix()", 500);
+  console.log(z);
+  this.getElementsByTagName("div")[0].style.width = "100%";
+  this.getElementsByTagName("div")[0].style.height = "100%";
+  this.getElementsByTagName("div")[0].style.opacity = "1";
+  choice = this.getElementsByTagName("div")[0].classList[1];
+  playerChoice[z] = choice;
+  // console.log(typeof playerChoice, playerChoice);
+  // console.log(typeof choice, choice);
+  z++;
+  if(z>=2){
+    stopJdp();
+  }
+}
+
+function stopJdp(){
+  for(i=0; i<carte.length; i++){
+    carte[i].removeEventListener('click', showChoice);
+  }
+  compare();
+}
+
+function compare(){
+  if(playerChoice[0]==playerChoice[1]){
+
+  }
+}
+
+// function showChoix(){
+//   var size = 0;
+//   this.getElementsByTagName("div")[0].style.width = size + "%";
+//   this.getElementsByTagName("div")[0].style.height = size + "%";
+//   if(size<100){
+//     size += 5;
+//   }
+//   else{
+//     clearInterval(myOpen);
+//   }
+// }
+
+for(i=0; i<carte.length; i++){
+  carte[i].addEventListener('click', showChoice);
+}
+
+
+
+//////////////////////////////////////////////////////////////
+//////////////////////// CALCULATRICE ////////////////////////
+//////////////////////////////////////////////////////////////
