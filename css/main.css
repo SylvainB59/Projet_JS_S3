@@ -212,6 +212,7 @@ h1, h2 {
     margin: auto;
     /*background-color: black;*/
     background: linear-gradient(50deg, black 15%, lightgrey, black 85%);
+    /*background: linear-gradient(50deg, black 5%, lightgrey, black 95%);*/
     border: 3px solid black;
     border-radius: 10px;
     display: flex;
@@ -282,9 +283,9 @@ h1, h2 {
     background: linear-gradient(-50deg, violet, #C300FF, violet)
 }
 
-.marron {
+.pink {
     /*background-color: brown;*/
-    background: linear-gradient(-50deg, brown, #F5DEC3, brown)
+    background: linear-gradient(-50deg, pink, #F5DEC3, pink)
 }
 
 

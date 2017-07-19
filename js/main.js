@@ -215,7 +215,7 @@ function prev(){
 /////////////////////// JEU DES PAIRES ///////////////////////
 //////////////////////////////////////////////////////////////
 
-var colors = ["rouge", "rouge", "vert", "vert", "bleu", "bleu", "jaune", "jaune", "marron", "marron", "orange", "orange", "violet", "violet"];
+var colors = ["rouge", "rouge", "vert", "vert", "bleu", "bleu", "jaune", "jaune", "pink", "pink", "orange", "orange", "violet", "violet"];
 var test = [];
 var carte = document.getElementsByClassName("carte");
 var choix = document.getElementsByClassName("choix");
@@ -267,7 +267,7 @@ function showChoice(){
   else{
     this.getElementsByTagName("div")[0].style.width = "100%";
     this.getElementsByTagName("div")[0].style.height = "100%";
-    this.getElementsByTagName("div")[0].style.opacity = ".8";
+    this.getElementsByTagName("div")[0].style.opacity = ".7";
     this.getElementsByTagName("div")[0].style.borderRadius = "0%";
     choice = this.getElementsByTagName("div")[0].classList[1];
     playerChoice[z] = choice;
