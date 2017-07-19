@@ -98,7 +98,7 @@
             </article>
         </section>
 
-        <section id="mainJdp" class="">
+        <section id="mainJdp" class="hidden">
             <h2>Jeu des paires</h2>
             <article id="startJDP">
                 <p onclick="startJdp()">START</p>
@@ -118,7 +118,11 @@
                 <div class="carte"><div class="choix"></div></div>
                 <div class="carte"><div class="choix"></div></div>
                 <div class="carte"><div class="choix"></div></div>
-                <div class="score"><p id="score">Choose 2 cards</p></div>
+                <div class="score">
+                    <p id="result">Choose 2 cards</p>
+                    <p id="score"></p>
+                </div>
+                <article onclick="replayJdp()" id="endJdp"><p></p></article>
             </article>
         </section>
 

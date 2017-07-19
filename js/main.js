@@ -216,14 +216,19 @@ function prev(){
 //////////////////////////////////////////////////////////////
 
 var colors = ["rouge", "rouge", "vert", "vert", "bleu", "bleu", "jaune", "jaune", "marron", "marron", "orange", "orange", "violet", "violet"];
+var test = [];
 var carte = document.getElementsByClassName("carte");
 var choix = document.getElementsByClassName("choix");
-// var choice = [];
 var playerChoice = [];
 var z = 0;
-// random();
+var coup = 0;
+var end = 0;
+var m;
+var n;
+
 
 function startJdp(){
+  test = [];
   random();
   document.getElementById("startJDP").classList.add("hidden");
   document.getElementById("jdp").classList.remove("hidden");
@@ -232,23 +237,33 @@ function startJdp(){
 function random(){
   for(i=0; i<14; i++){
     var randomColor = Math.floor(Math.random()*colors.length);
-    choix[i].classList.add(colors.splice(randomColor, 1));
+    var choixRandom = colors.splice(randomColor, 1)
+    choix[i].classList.add(choixRandom);
+    test.push(choixRandom[0]);
   }
+  startGame();
 }
 
 function showChoice(){
-  // var myOpen = setInterval("showChoix()", 500);
-  console.log(z);
-  this.getElementsByTagName("div")[0].style.width = "100%";
-  this.getElementsByTagName("div")[0].style.height = "100%";
-  this.getElementsByTagName("div")[0].style.opacity = "1";
-  choice = this.getElementsByTagName("div")[0].classList[1];
-  playerChoice[z] = choice;
-  // console.log(typeof playerChoice, playerChoice);
-  // console.log(typeof choice, choice);
-  z++;
-  if(z>=2){
-    stopJdp();
+  if(z==0){
+    m = this.getElementsByTagName("div")[0];
+  }
+  else if(z==1){
+    n = this.getElementsByTagName("div")[0];
+  }
+  if(this.getElementsByTagName("div")[0].style.width == "100%"){
+    document.getElementById("result").innerHTML = "ANOTHER CARD";
+  }
+  else{
+    this.getElementsByTagName("div")[0].style.width = "100%";
+    this.getElementsByTagName("div")[0].style.height = "100%";
+    this.getElementsByTagName("div")[0].style.opacity = ".8";
+    choice = this.getElementsByTagName("div")[0].classList[1];
+    playerChoice[z] = choice;
+    z++;
+    if(z>=2){
+      stopJdp();
+    }
   }
 }
 
@@ -260,27 +275,66 @@ function stopJdp(){
 }
 
 function compare(){
-  if(playerChoice[0]==playerChoice[1]){
-
+  if(playerChoice[0]!=playerChoice[1]){
+    document.getElementById("result").innerHTML = "NO";
+    playerChoice = [];
+    setTimeout(function()
+    {
+      m.style.width = "0%";
+      m.style.height = "0%";
+      m.style.opacity = "0";
+      n.style.width = "0%";
+      n.style.height = "0%";
+      n.style.opacity = "0";
+      startGame();
+    }, 800)
+  }
+  else{
+    document.getElementById("result").innerHTML = "YES";
+    playerChoice = [];
+    end++;
+    if(end == 7){
+      setTimeout(stopJDP, 2000)
+    }
+    else{
+      startGame();
+    }
   }
 }
 
-// function showChoix(){
-//   var size = 0;
-//   this.getElementsByTagName("div")[0].style.width = size + "%";
-//   this.getElementsByTagName("div")[0].style.height = size + "%";
-//   if(size<100){
-//     size += 5;
-//   }
-//   else{
-//     clearInterval(myOpen);
-//   }
-// }
-
-for(i=0; i<carte.length; i++){
-  carte[i].addEventListener('click', showChoice);
+function stopJDP(){
+  for(i=0; i<choix.length; i++){
+    choix[i].style.width = "0%";
+    choix[i].style.height = "0%";
+    choix[i].style.opacity = "0";
+  }
+  document.getElementById("endJdp").style.opacity = "1";
+  document.getElementById("endJdp").style.zIndex = "10";
+  document.getElementById("endJdp").getElementsByTagName("p")[0].innerHTML = "YOU WIN IN " + coup + " HITS";
 }
 
+function replayJdp(){
+  for(i=0; i<choix.length; i++){
+    choix[i].classList.remove(test[i]);
+  }
+  document.getElementById("endJdp").style.opacity = "0";
+  document.getElementById("endJdp").style.zIndex = "-5";
+  document.getElementById("startJDP").classList.remove("hidden");
+  document.getElementById("jdp").classList.add("hidden");
+  z = 0;
+  coup = 0;
+  end = 0;
+  colors = test;
+}
+
+function startGame(){
+  z = 0;
+  coup++;
+  document.getElementById("score").innerHTML = "HIT n°" + coup;
+  for(i=0; i<carte.length; i++){
+    carte[i].addEventListener('click', showChoice);
+  }
+}
 
 
 //////////////////////////////////////////////////////////////

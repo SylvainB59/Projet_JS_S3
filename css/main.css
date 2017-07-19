@@ -174,23 +174,31 @@ h1, h2 {
 
 /*~~~~~~~~~~ JEU DES PAIRES ~~~~~~~~~~*/
 
-#startJDP, .jdp {
+#startJDP, .jdp, #endJdp {
     display: flex;
     height: 95vh;
     border: 2px solid black;
 }
 
-#startJDP {
+#startJDP, #endJdp {
     justify-content: center;
     align-items: center;
     background-color: lightgrey;
 }
 
-#startJDP p {
+#startJDP p, #endJdp p {
     padding: 20px;
-    border-radius: 10%;
+    border-radius: 10px;
     border: 2px solid black;
     background-color: white;
+}
+
+#endJdp {
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+    z-index: -5;
+    transition: 2s;
 }
 
 .jdp {
@@ -202,7 +210,9 @@ h1, h2 {
     width: 13%;
     height: 35%;
     margin: auto;
-    background-color: black;
+    /*background-color: black;*/
+    background: linear-gradient(50deg, black 15%, lightgrey, black 85%);
+    border: 3px solid black;
     border-radius: 10px;
     display: flex;
     justify-content: center;
@@ -227,6 +237,7 @@ h1, h2 {
 .score {
     position: absolute;
     display: flex;
+    flex-direction: column;
     height: 95vh;
     width: 100%;
     z-index: -1;
@@ -234,36 +245,45 @@ h1, h2 {
     align-items: center;
 }
 
-#score {
-    background-color: lightgrey;
+.score p {
+    margin: 0;
+    /*padding: 10px;*/
+    /*background-color: lightgrey;*/
 }
 
 .rouge {
-    background-color: red;
+    /*background-color: red;*/
+    background: linear-gradient(-50deg, red, #FFAAAA, red)
 }
 
 .vert {
-    background-color: green;
+    /*background-color: green;*/
+    background: linear-gradient(-50deg, green, #AAFFAA, green)
 }
 
 .bleu {
-    background-color: blue;
+    /*background-color: blue;*/
+    background: linear-gradient(-50deg, blue, #AAAAFF, blue)
 }
 
 .jaune {
-    background-color: yellow;
+    /*background-color: yellow;*/
+    background: linear-gradient(-50deg, yellow, #FFFFAA, yellow)
 }
 
 .orange {
-    background-color: orange;
+    /*background-color: orange;*/
+    background: linear-gradient(-50deg, orange, #FFCDA0, orange)
 }
 
 .violet {
-    background-color: violet;
+    /*background-color: violet;*/
+    background: linear-gradient(-50deg, violet, #C300FF, violet)
 }
 
 .marron {
-    background-color: brown;
+    /*background-color: brown;*/
+    background: linear-gradient(-50deg, brown, #F5DEC3, brown)
 }
 
 
