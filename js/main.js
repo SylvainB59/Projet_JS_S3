@@ -232,6 +232,7 @@ function startJdp(){
   random();
   document.getElementById("startJDP").classList.add("hidden");
   document.getElementById("jdp").classList.remove("hidden");
+  document.getElementById("result").innerHTML = "CHOOSE TWO CARDS PLZ";
 }
 
 function random(){
@@ -244,6 +245,15 @@ function random(){
   startGame();
 }
 
+function startGame(){
+  z = 0;
+  coup++;
+  document.getElementById("score").innerHTML = "HIT n°" + coup;
+  for(i=0; i<carte.length; i++){
+    carte[i].addEventListener('click', showChoice);
+  }
+}
+
 function showChoice(){
   if(z==0){
     m = this.getElementsByTagName("div")[0];
@@ -252,12 +262,13 @@ function showChoice(){
     n = this.getElementsByTagName("div")[0];
   }
   if(this.getElementsByTagName("div")[0].style.width == "100%"){
-    document.getElementById("result").innerHTML = "ANOTHER CARD";
+    document.getElementById("result").innerHTML = "ANOTHER CARD PLZ";
   }
   else{
     this.getElementsByTagName("div")[0].style.width = "100%";
     this.getElementsByTagName("div")[0].style.height = "100%";
     this.getElementsByTagName("div")[0].style.opacity = ".8";
+    this.getElementsByTagName("div")[0].style.borderRadius = "0%";
     choice = this.getElementsByTagName("div")[0].classList[1];
     playerChoice[z] = choice;
     z++;
@@ -283,9 +294,11 @@ function compare(){
       m.style.width = "0%";
       m.style.height = "0%";
       m.style.opacity = "0";
+      m.style.borderRadius = "100%";
       n.style.width = "0%";
       n.style.height = "0%";
       n.style.opacity = "0";
+      n.style.borderRadius = "100%";
       startGame();
     }, 800)
   }
@@ -307,6 +320,7 @@ function stopJDP(){
     choix[i].style.width = "0%";
     choix[i].style.height = "0%";
     choix[i].style.opacity = "0";
+    choix[i].style.borderRadius = "100%";
   }
   document.getElementById("endJdp").style.opacity = "1";
   document.getElementById("endJdp").style.zIndex = "10";
@@ -327,14 +341,7 @@ function replayJdp(){
   colors = test;
 }
 
-function startGame(){
-  z = 0;
-  coup++;
-  document.getElementById("score").innerHTML = "HIT n°" + coup;
-  for(i=0; i<carte.length; i++){
-    carte[i].addEventListener('click', showChoice);
-  }
-}
+
 
 
 //////////////////////////////////////////////////////////////

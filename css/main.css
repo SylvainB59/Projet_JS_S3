@@ -222,10 +222,11 @@ h1, h2 {
 
 .choix {
     /*transition: .2s;*/
-    transition : opacity 1s, width .5s, height .5s;
+    transition : opacity 1s, width .5s, height .5s, border-radius .5s;
     width: 0%;
     height: 0%;
     opacity: 0;
+    border-radius: 100%;
 }
 
 .carte:hover .choix {
