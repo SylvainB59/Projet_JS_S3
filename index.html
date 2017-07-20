@@ -90,10 +90,10 @@
             <article class="slider">
                 <figure id="center"><img id="imgCenter" src="" alt="images du slider"></figure>
                 <div class="bouton">
-                    <p onclick="prev()">Prev</p>
-                    <p onclick="stop()" id="stop" class="hidden">STOP</p>
-                    <p onclick="mySlider()" id="start" class="">START</p>
-                    <p onclick="next()">Next</p>
+                    <p onclick="prev()" class="btnStart">Prev</p>
+                    <p onclick="stop()" id="stop" class="hidden btnStart">STOP</p>
+                    <p onclick="mySlider()" id="start" class="btnStart">START</p>
+                    <p onclick="next()" class="btnStart">Next</p>
                 </div>
             </article>
         </section>
@@ -101,7 +101,7 @@
         <section id="mainJdp" class="hidden">
             <h2>Jeu des paires</h2>
             <article id="startJDP">
-                <p onclick="startJdp()">START</p>
+                <p onclick="startJdp()" class="btnStart">START</p>
             </article>
             <article id="jdp" class="jdp hidden">
                 <div class="carte"><div class="choix"></div></div>
@@ -126,10 +126,12 @@
             </article>
         </section>
 
-        <section id="mainCalc" class="hidden">
+        <section id="mainCalc" class="container">
             <h2>Calculatrice</h2>
-            <article>
-            </article>
+            <div class="row">
+                <article class="offset-md-3 offset-lg-4 col-12 col-md-6 col-lg-4">
+                </article>
+            </div>
         </section>
 
         <!-- END OF SECTION -->
