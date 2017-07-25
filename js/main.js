@@ -150,6 +150,8 @@ center.src = imgSource(myImage[index]);
 var Stop = clearInterval(Start);
 // var Start = setInterval(slider, 2000);
 var Start;
+// setTimeout(start(), 0);
+start();
 
 
 
@@ -161,14 +163,18 @@ function slider(){
   }
 }
 
-function mySlider(){
-  start();
-  document.getElementById("start").classList.add("hidden");
-  document.getElementById("stop").classList.remove("hidden");
+function start(){
+  Start = setInterval("slider()", 3000)
 }
 
-function start(){
-  Start = setInterval("slider()", 2000)
+function mySlider(){
+  start();
+  // setTimeout(function(){
+  //   document.getElementById("start").classList.add("hidden");
+  //   document.getElementById("stop").classList.remove("hidden");
+  // }, 5000)
+  document.getElementById("start").classList.add("hidden");
+  document.getElementById("stop").classList.remove("hidden");
 }
 
 function stop(){
@@ -181,6 +187,7 @@ function next(){
   stop();
   slider();
   // setTimeout(mySlider, 5000)
+  mySlider();
 }
 
 function prev(){
@@ -191,6 +198,7 @@ function prev(){
     index = myImage.length-1;
   }
   // setTimeout(mySlider, 5000)
+  mySlider();
 }
 
 // function plus(){
@@ -347,3 +355,157 @@ function replayJdp(){
 //////////////////////////////////////////////////////////////
 //////////////////////// CALCULATRICE ////////////////////////
 //////////////////////////////////////////////////////////////
+
+
+var calcul = document.getElementById("operation");
+var resultat = document.getElementById("resultat");
+var toucheN = document.getElementsByClassName("nb");
+var toucheO = document.getElementsByClassName("op");
+var toucheEg = document.getElementById("eg");
+var toucheRet = document.getElementById("retour");
+var toucheVirg = document.getElementById("virg");
+var nombre = [];
+var operat = 0;
+var result;
+var I = 0;
+var V = 0;
+
+for(i=0; i<toucheN.length; i++){
+  toucheN[i].addEventListener('click', afficheN);
+  toucheN[i].addEventListener('mousedown', clickN);
+  toucheN[i].addEventListener('mouseup', relacheN);
+}
+
+for(i=0; i<toucheO.length; i++){
+  toucheO[i].addEventListener('click', afficheO);
+  toucheO[i].addEventListener('mousedown', clickO);
+  toucheO[i].addEventListener('mouseup', relacheO);
+}
+
+toucheVirg.addEventListener('click', afficheVirg);
+toucheVirg.addEventListener('mousedown', clickN);
+toucheVirg.addEventListener('mouseup', relacheN);
+
+toucheRet.addEventListener('click', retour);
+toucheRet.addEventListener('mousedown', clickO);
+toucheRet.addEventListener('mouseup', relacheO);
+
+toucheEg.addEventListener('click', afficheEg);
+toucheEg.addEventListener('mousedown', clickEg);
+toucheEg.addEventListener('mouseup', relacheEg);
+
+
+function clickN(){
+  this.style.background = "linear-gradient(white 10%, grey 60%, white 90%)";
+}
+
+function relacheN(){
+  this.style.background = "linear-gradient(grey, white 60%, grey)";
+}
+
+function clickO(){
+  this.style.background = "linear-gradient(#AA0000 10%, black 60%, #AA0000 90%)";
+}
+
+function relacheO(){
+  this.style.background = "linear-gradient(black, red 60%, black)";
+}
+
+function clickEg(){
+  this.style.background = "linear-gradient(green 10%, black 60%, green 90%)";
+}
+
+function relacheEg(){
+  this.style.background = "linear-gradient(black, green 60%, black)";
+}
+
+
+function afficheN(){
+  // nombre[I] = this.innerHTML;
+  // calcul.innerHTML = nombre.join("");
+  // I++;
+  select(this);
+  operat = 1;
+  // console.log(nombre, operat);
+  // console.log(I, nombre);
+}
+
+function afficheO(){
+  V = 0;
+  // console.log("this", this.innerHTML)
+  if(operat == 1){
+    // console.log(I, nombre, operat);
+    // nombre[I] = this.innerHTML;
+    // calcul.innerHTML = nombre.join("");
+    // I++;
+    select(this);
+    operat = 2;
+    // console.log(I, nombre, operat);
+  }
+  else if(operat == 2){
+    I--;
+    // nombre[I] = this.innerHTML;
+    // calcul.innerHTML = nombre.join("");
+    // I++;
+    select(this);
+    // console.log(I, nombre, operat)
+  }
+  else if(operat = 3){
+    operat = 2;
+    nombre[I] = result;
+    I++;
+    // nombre[I] = this.innerHTML;
+    // calcul.innerHTML = nombre.join("");
+    // I++;
+    select(this);
+    resultat.innerHTML = "";
+  }
+}
+
+function afficheEg(){
+  V = 0;
+  if(operat == 1){
+    // I++;
+    // nombre[I] = this.innerHTML;
+    // resultTab = nombre;
+    // console.log(nombre);
+    resultStr = nombre.join("");
+    result = eval(nombre.join(""));
+    // console.log(resultStr, result)
+    resultat.innerHTML = "=  " + result;
+    operat = 3;
+    I = 0;
+    nombre = [];
+    // calcul.innerHTML = nombre.join("");
+    // console.log(parseInt(result), typeof result);
+  }
+}
+
+function retour(){
+  I--;
+  nombre.splice(I);
+  calcul.innerHTML = nombre.join("");
+  operat = 1;
+  if(I<=0){
+    I=0;
+    calcul.innerHTML = 0;
+  }
+  console.log(nombre[I-1]);
+}
+
+function afficheVirg(){
+  if(V == 0){
+    select(this);
+    V = 1;
+  }
+  else if(V == 1){
+    // I--;
+    // select(this);
+  }
+}
+
+function select(T){
+  nombre[I] = T.innerHTML;
+  calcul.innerHTML = nombre.join("");
+  I++;
+}

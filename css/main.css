@@ -110,12 +110,8 @@ h1, h2 {
     text-align: center;
 }
 
-.navigation p, .btnStart, .carte{
+.navigation p, .btnStart, .carte, .nb, .op, .eg, .retour, .virg{
     cursor: pointer;
-}
-
-.choix {
-    cursor: not-allowed;
 }
 
 /*Enc of common rules*/
@@ -240,6 +236,7 @@ h1, h2 {
     height: 0%;
     opacity: 0;
     border-radius: 100%;
+    cursor: not-allowed;
 }
 
 .score {
@@ -255,42 +252,33 @@ h1, h2 {
 
 .score p {
     margin: 0;
-    /*padding: 10px;*/
-    /*background-color: lightgrey;*/
 }
 
 .rouge {
-    /*background-color: red;*/
     background: linear-gradient(-50deg, red, #FFAAAA, red)
 }
 
 .vert {
-    /*background-color: green;*/
     background: linear-gradient(-50deg, green, #AAFFAA, green)
 }
 
 .bleu {
-    /*background-color: blue;*/
     background: linear-gradient(-50deg, blue, #AAAAFF, blue)
 }
 
 .jaune {
-    /*background-color: yellow;*/
     background: linear-gradient(-50deg, yellow, #FFFFAA, yellow)
 }
 
 .orange {
-    /*background-color: orange;*/
     background: linear-gradient(-50deg, orange, #FFCDA0, orange)
 }
 
 .violet {
-    /*background-color: violet;*/
     background: linear-gradient(-50deg, violet, #C300FF, violet)
 }
 
 .pink {
-    /*background-color: brown;*/
     background: linear-gradient(-50deg, pink, #F5DEC3, pink)
 }
 
@@ -298,10 +286,88 @@ h1, h2 {
 /*~~~~~~~~~~ CALCULATRICE ~~~~~~~~~~*/
 
 #mainCalc article {
-    height: 200px;
-    background-color: grey;
+    width: 100vw;
+    border: 2px solid black;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: auto;
+    font-weight: bold;
+}
+
+.affichage, .operateur {
     border: 2px solid black;
 }
+
+.affichage {
+    justify-content: space-between;
+    background-color: black;
+    border: 2px solid white;
+    border-radius: 8px 8px 0 0;
+}
+
+.affichage p {
+    color: white;
+    padding: 5px;
+    margin: 0 5px;
+    height: 35px;
+}
+
+.operation {
+}
+
+.affichage .retour {
+    text-align: center;
+    border-left: 2px solid white;
+    border-bottom: 2px solid white;
+    margin-right: 0;
+    border-radius: 10%;
+}
+
+.resultat {
+    text-align: right;
+}
+
+.operateur {
+    justify-content: space-around;
+    background-color: darkgrey;
+    border-radius: 0 0 8px 8px;
+}
+
+.operateur p {
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 10%;
+    transition: background 1s;
+}
+
+.nb, .virg {
+    background: linear-gradient(grey, white 60%, grey);
+    color: black;
+}
+
+.op, .retour {
+    background: linear-gradient(black, red 60%, black);
+    color: white;
+}
+
+.eg {
+    background: linear-gradient(black, green 60%, black);
+    color: white;
+}
+
+/*.nb:hover {
+    background: linear-gradient(white 10%, grey 60%, white 90%);
+}
+
+.op:hover {
+    background: linear-gradient(#AA0000 10%, black 60%, #AA0000 90%);
+}
+
+.eg:hover {
+    background: linear-gradient(green 10%, black 60%, green 10%);
+}*/
 
 
 /*END OF SECTION*/
@@ -322,6 +388,12 @@ h1, h2 {
     /*END OF HEADER*/
 
     /*START OF SECTION*/
+
+    /*~~~~~~~~~~ CALCULATRICE ~~~~~~~~~~*/
+
+    #mainCalc article {
+        width: 50vw;
+    }
 
     /*END OF SECTION*/
 
@@ -346,6 +418,12 @@ h1, h2 {
 
     .slider {
         width: 80vw;
+    }
+
+    /*~~~~~~~~~~ CALCULATRICE ~~~~~~~~~~*/
+
+    #mainCalc article {
+        width: 35vw;
     }
 
     /*END OF SECTION*/

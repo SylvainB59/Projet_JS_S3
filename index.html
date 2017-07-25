@@ -91,8 +91,8 @@
                 <figure id="center"><img id="imgCenter" src="" alt="images du slider"></figure>
                 <div class="bouton">
                     <p onclick="prev()" class="btnStart">Prev</p>
-                    <p onclick="stop()" id="stop" class="hidden btnStart">STOP</p>
-                    <p onclick="mySlider()" id="start" class="btnStart">START</p>
+                    <p onclick="stop()" id="stop" class="btnStart">STOP</p>
+                    <p onclick="mySlider()" id="start" class="hidden btnStart">START</p>
                     <p onclick="next()" class="btnStart">Next</p>
                 </div>
             </article>
@@ -126,12 +126,36 @@
             </article>
         </section>
 
-        <section id="mainCalc" class="container">
+        <section id="mainCalc" class="">
             <h2>Calculatrice</h2>
-            <div class="row">
-                <article class="offset-md-3 offset-lg-4 col-12 col-md-6 col-lg-4">
-                </article>
-            </div>
+            <article class="container">
+                <div id="affichage" class="row affichage">
+                    <p id="operation" class="operation col-9">0</p>
+                    <p id="retour" class="col-2 retour">&larr;</p>
+                    <p id="resultat" class="resultat col-11">0</p>
+                </div>
+                <div id="operateur" class="row operateur">
+                    <p class="col-2 nb">7</p>
+                    <p class="col-2 nb">8</p>
+                    <p class="col-2 nb">9</p>
+                    <p class="col-2 op">/</p>
+                    <div class="w-100"></div>
+                    <p class="col-2 nb">4</p>
+                    <p class="col-2 nb">5</p>
+                    <p class="col-2 nb">6</p>
+                    <p class="col-2 op">*</p>
+                    <div class="w-100"></div>
+                    <p class="col-2 nb">1</p>
+                    <p class="col-2 nb">2</p>
+                    <p class="col-2 nb">3</p>
+                    <p class="col-2 op">-</p>
+                    <div class="w-100"></div>
+                    <p id="virg" class="col-2 virg">.</p>
+                    <p class="col-2 nb">0</p>
+                    <p id="eg" class="col-2 eg">=</p>
+                    <p class="col-2 op">+</p>
+                </div>
+            </article>
         </section>
 
         <!-- END OF SECTION -->
@@ -139,7 +163,7 @@
         <!-- START OF FOOTER -->
 
         <footer>
-
+            <p>Original creation of me&trade;</p>
         </footer>
 
         <!-- END OF FOOTER -->
