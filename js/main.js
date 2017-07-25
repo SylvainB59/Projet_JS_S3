@@ -421,42 +421,24 @@ function relacheEg(){
 
 
 function afficheN(){
-  // nombre[I] = this.innerHTML;
-  // calcul.innerHTML = nombre.join("");
-  // I++;
   select(this);
   operat = 1;
-  // console.log(nombre, operat);
-  // console.log(I, nombre);
 }
 
 function afficheO(){
   V = 0;
-  // console.log("this", this.innerHTML)
   if(operat == 1){
-    // console.log(I, nombre, operat);
-    // nombre[I] = this.innerHTML;
-    // calcul.innerHTML = nombre.join("");
-    // I++;
     select(this);
     operat = 2;
-    // console.log(I, nombre, operat);
   }
   else if(operat == 2){
     I--;
-    // nombre[I] = this.innerHTML;
-    // calcul.innerHTML = nombre.join("");
-    // I++;
     select(this);
-    // console.log(I, nombre, operat)
   }
   else if(operat = 3){
     operat = 2;
     nombre[I] = result;
     I++;
-    // nombre[I] = this.innerHTML;
-    // calcul.innerHTML = nombre.join("");
-    // I++;
     select(this);
     resultat.innerHTML = "";
   }
@@ -465,19 +447,12 @@ function afficheO(){
 function afficheEg(){
   V = 0;
   if(operat == 1){
-    // I++;
-    // nombre[I] = this.innerHTML;
-    // resultTab = nombre;
-    // console.log(nombre);
     resultStr = nombre.join("");
     result = eval(nombre.join(""));
-    // console.log(resultStr, result)
     resultat.innerHTML = "=  " + result;
     operat = 3;
     I = 0;
     nombre = [];
-    // calcul.innerHTML = nombre.join("");
-    // console.log(parseInt(result), typeof result);
   }
 }
 
@@ -499,8 +474,6 @@ function afficheVirg(){
     V = 1;
   }
   else if(V == 1){
-    // I--;
-    // select(this);
   }
 }
 
